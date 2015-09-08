@@ -129,6 +129,7 @@
 				DE3758631B9F0238001ED6AF /* Sources */,
 				DE3758641B9F0238001ED6AF /* Frameworks */,
 				DE3758651B9F0238001ED6AF /* Resources */,
+				DE37588F1B9F0654001ED6AF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,6 +214,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE37588F1B9F0654001ED6AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE3758631B9F0238001ED6AF /* Sources */ = {
@@ -411,6 +428,7 @@
 				DE37588B1B9F0238001ED6AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE37588C1B9F0238001ED6AF /* Build configuration list for PBXNativeTarget "spriteTest0908Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +437,7 @@
 				DE37588E1B9F0238001ED6AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
